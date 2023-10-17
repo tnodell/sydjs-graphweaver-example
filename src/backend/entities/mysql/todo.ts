@@ -1,5 +1,5 @@
-import { Entity, PrimaryKey, Property, Unique } from "@mikro-orm/core";
-import { BaseEntity } from "@exogee/graphweaver-mikroorm";
+import { Entity, PrimaryKey, Property } from "@mikro-orm/core";
+import { BaseEntity, ExternalIdField } from "@exogee/graphweaver-mikroorm";
 
 @Entity({ tableName: "todo" })
 export class Todo extends BaseEntity {
@@ -12,6 +12,7 @@ export class Todo extends BaseEntity {
   @Property({ type: "boolean", default: false })
   isCompleted!: boolean;
 
+  @ExternalIdField({ from: "user" })
   @Property({ type: "int8", nullable: false })
   userId!: string;
 }

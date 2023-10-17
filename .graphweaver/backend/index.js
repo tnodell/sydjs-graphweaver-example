@@ -112,6 +112,7 @@ __decorateClass([
   (0, import_core2.Property)({ type: "boolean", default: false })
 ], Todo.prototype, "isCompleted", 2);
 __decorateClass([
+  (0, import_graphweaver_mikroorm2.ExternalIdField)({ from: "user" }),
   (0, import_core2.Property)({ type: "int8", nullable: false })
 ], Todo.prototype, "userId", 2);
 Todo = __decorateClass([
